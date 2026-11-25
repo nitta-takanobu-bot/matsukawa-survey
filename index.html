@@ -42,6 +42,7 @@ textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--gold)}
 .ask{margin-top:18px;display:flex;gap:10px;align-items:flex-start}
 /* お願いの顔：写真が届くまでは「松」の丸印 */
 .face{width:66px;height:66px;flex:none;margin-top:6px;border-radius:50%;object-fit:cover}
+.face-photo{border:2px solid var(--gold)}
 .face-mark{display:grid;place-items:center;background:var(--accent);color:var(--gold);font-family:"Shippori Mincho",serif;font-size:30px;font-weight:700;border:2px solid var(--gold)}
 .bubble{position:relative;flex:1;background:#fbf6ec;border:1.5px solid #e2cfa4;border-radius:18px;padding:14px 14px 4px;font-size:14px;line-height:1.85}
 .bubble::before{content:"";position:absolute;left:-9px;top:26px;border:8px solid transparent;border-right-color:#e2cfa4;border-left:0}
@@ -126,8 +127,7 @@ textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--gold)}
       <button class="btn btn-sub" id="againBtn">別の言い回しにする</button>
     </div>
     <div class="ask">
-      <!-- 写真が届いたら <img class="face" src="photo.png" alt="..."> に差し替え -->
-      <div class="face face-mark" aria-hidden="true">松</div>
+      <img class="face face-photo" src="photo.png" alt="荘厳佛具 松川 職人の仕事風景" width="66" height="66">
       <div class="bubble">
         <p class="ask-title">荘厳佛具 松川からのお願い</p>
         <p>ここまでお答えいただき、ありがとうございます。</p>
