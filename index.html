@@ -163,7 +163,7 @@ textarea:focus{outline:2px solid var(--accent-soft);border-color:var(--gold)}
 const CONFIG = {
   shopName: "荘厳佛具 松川",
   googleReviewUrl: "https://g.page/r/Ceu0TG0MtVNEEAE/review"   // 株式会社まつかわ（柏市つくしが丘）の口コミ入力画面。空ならGoogleマップの検索結果を開く
-  ,saveUrl: ""          // 回答の保存先（スプレッドシートのApps Script「ウェブアプリ」のURL）。空なら保存しない
+  ,saveUrl: "https://script.google.com/macros/s/AKfycbxkR9IB6GtE2d_P4cmA9oDO3l-BARJREw0DODZclZbRrDULzYjWYdJ5tnGaknzsQNAR/exec"   // 佛心寺の「アンケート」表の「松川」タブへ（site で振り分け）。回答の保存先（スプレッドシートのApps Script「ウェブアプリ」のURL）。空なら保存しない
 };
 /* ======================================================== */
 
@@ -384,6 +384,7 @@ function saveAnswer(){
   const s = state;
   const lab = (g,keys)=>OPTIONS[g].filter(([k])=>keys.includes(k)).map(([,l])=>l).join("、");
   const body = JSON.stringify({
+    site: "matsukawa",   // 受け取り側でこの名札を見て「松川」タブに入れる
     id: answerId,
     purpose: lab("purpose",[s.purpose]),
     rating: s.rating,
